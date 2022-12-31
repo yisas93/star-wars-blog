@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
@@ -9,7 +9,9 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
-
+import { Sidebar } from "./component/sidebar.jsx";
+import {Planets} from "./views/planets.jsx"
+import {Characters} from "./views/characters.jsx"
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -20,12 +22,15 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-					<Navbar />
+				
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
+						<Route path="/sidebar" element={<Sidebar/>}/>
+						<Route path="/planets" element={<Planets/>}/>
+						<Route path="/characters" element={<Characters/>}/>
 					</Routes>
 					<Footer />
 				</ScrollToTop>
