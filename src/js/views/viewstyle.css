@@ -1,0 +1,10 @@
+.title{
+    
+        color: rgb(20, 236, 16);
+        -webkit-text-fill-color: rgb(0, 0, 0); /* Will override color (regardless of order) */
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgb(14, 230, 42);
+        font-size: 2cm;
+        text-align: center;
+
+}

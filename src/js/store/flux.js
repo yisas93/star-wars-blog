@@ -12,9 +12,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			planets: [
+			],
+			films:[
+
+			],
+			starships:[],
+			people:[],
 		},
+
+
+		
 		actions: {
+
+
+			getStarwars:async (element)=>{
+				let resp= await fetch(`https://www.swapi.tech/api/${element}`)
+				if(!resp.ok){
+					console.error(resp.status + ": " +  resp.statusText)
+					return
+				}
+				let data=await resp.json()
+				let newStore={...getStore()}
+				newStore[element]= data.results || data.result
+				setStore(newStore)
+			},
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");

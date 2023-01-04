@@ -24,13 +24,19 @@ return (
                             <i className="fs-4 bi-table"></i> <span className="ms-1 d-none d-sm-inline">Planets</span></Link>
                     </li>
                     <li>
-                        <a href="#" className="nav-link px-0 align-middle">
-                            <i className="fs-4 bi-people"></i> <span className="ms-1 d-none d-sm-inline">Customers</span> </a>
+                        <a href="/films" className="nav-link px-0 align-middle">
+                            <i className="fs-4 bi-people"></i> <span className="ms-1 d-none d-sm-inline">Films</span> </a>
                     </li>
                     
                     <li>
-                        <a href="#" className="nav-link px-0 align-middle">
-                            <i className="fs-4 bi-people"></i> <span className="ms-1 d-none d-sm-inline">Customers</span> </a>
+                        <a href="/demo" className="nav-link px-0 align-middle">
+                            <i className="fs-4 bi-people"></i> <span className="ms-1 d-none d-sm-inline">Demo</span> </a>
+
+                    </li>
+                    <li>
+                        <a href="/starships" className="nav-link px-0 align-middle">
+                            <i className="fs-4 bi-people"></i> <span className="ms-1 d-none d-sm-inline">Starships</span> </a>
+                            
                     </li>
                 </ul>
                 <hr/>

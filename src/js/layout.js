@@ -12,6 +12,8 @@ import { Footer } from "./component/footer";
 import { Sidebar } from "./component/sidebar.jsx";
 import {Planets} from "./views/planets.jsx"
 import {Characters} from "./views/characters.jsx"
+import {Films} from "./views/films.jsx"
+import {Starships} from "./views/starships.jsx"
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -31,6 +33,8 @@ const Layout = () => {
 						<Route path="/sidebar" element={<Sidebar/>}/>
 						<Route path="/planets" element={<Planets/>}/>
 						<Route path="/characters" element={<Characters/>}/>
+						<Route path="/films" element={<Films/>}/>
+						<Route path="/starships" element={<Starships/>}/>
 					</Routes>
 					<Footer />
 				</ScrollToTop>
