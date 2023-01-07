@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { Card } from "../component/card.jsx"
 import { Context } from "../store/appContext.js"
+import { Pagination } from "../component/pagination.jsx"
 export const Characters =()=>{
 const {store, actions}=useContext(Context)
 useEffect(()=>{
@@ -23,6 +24,15 @@ useEffect(()=>{
                     />
                     </div>
                     )}
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <Pagination 
+                        pages={6}
+                        currentPage={1}
+                        type={"characters"}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

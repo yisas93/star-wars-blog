@@ -27,8 +27,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 
 
-			getStarwars:async (element)=>{
-				let resp= await fetch(`https://www.swapi.tech/api/${element}`)
+			getStarwars:async (element, pagination = {})=>{
+				let  params=""
+				if(!!pagination.page){
+					params=`?page=${pagination.page}&limit=${pagination.limit||10}`
+				}
+				let resp= await fetch(`https://www.swapi.tech/api/${element}${params}`)
 				if(!resp.ok){
 					console.error(resp.status + ": " +  resp.statusText)
 					return
