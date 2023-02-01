@@ -17,7 +17,6 @@ useEffect(()=>{
                 <div className="col-4">
                     <Card
                         title={people.name}
-                        text={people.description}
                         image={`https://starwars-visualguide.com/assets/img/characters/${people.uid}.jpg`}
                         type="characters"
                         id={people.uid}

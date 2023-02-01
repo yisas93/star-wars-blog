@@ -2,15 +2,19 @@ import React from "react";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./views/home";
+import { Home } from "./views/home.jsx";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
-
-import { Navbar } from "./component/navbar";
+import { PlanetDetail } from "./views/planetDetail.jsx";
+import { CharacterDetail } from "./views/characterDetail.jsx";
+import { FilmsDetail } from "./views/filmsDetail.jsx";
+import { StarshipsDetail } from "./views/starshipsDetail.jsx";
+import { Navbar } from "./component/navbar.jsx";
 import { Footer } from "./component/footer";
 import { Sidebar } from "./component/sidebar.jsx";
 import {Planets} from "./views/planets.jsx"
+
 import {Characters} from "./views/characters.jsx"
 import {Films} from "./views/films.jsx"
 import {Starships} from "./views/starships.jsx"
@@ -24,7 +28,7 @@ const Layout = () => {
 		<div>
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
-				
+				<Navbar/>
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/demo" element={<Demo />} />
@@ -32,9 +36,13 @@ const Layout = () => {
 						<Route path="*" element={<h1>Not found!</h1>} />
 						<Route path="/sidebar" element={<Sidebar/>}/>
 						<Route path="/planets" element={<Planets/>}/>
+						<Route path="/planets/:planetid" element={<PlanetDetail/>}/>
 						<Route path="/characters" element={<Characters/>}/>
+						<Route path="/characters/:characterid" element={<CharacterDetail/>}/>
 						<Route path="/films" element={<Films/>}/>
-						<Route path="/starships" element={<Starships/>}/>
+						<Route path="/films/:filmid" element={<FilmsDetail/>}/>
+						<Route path="/starship" element={<Starships/>}/>
+						<Route path="/starship/:starshipid" element={<StarshipsDetail/>}/>
 					</Routes>
 					<Footer />
 				</ScrollToTop>

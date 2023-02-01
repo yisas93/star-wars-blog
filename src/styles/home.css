@@ -1,3 +1,15 @@
 body{
    background: black;
 }
+.over{
+   background-color: black;
+   margin-top: 6rem;
+}
+.list-group-item{
+   background: black;
+   height: 18rem;
+}
+.list-group-horizontal{
+   overflow-y: hidden!important;
+   
+}
