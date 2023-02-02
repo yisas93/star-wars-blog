@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams,  } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
@@ -6,24 +6,44 @@ import { Details } from "../component/detail.jsx";
 export const PlanetDetail=()=>{
 const {store,actions}=useContext(Context);
 const {planetid}=useParams();
-useEffect(() => {
-    (async () => {
-      await actions.getStarwars("planets");
-    })();
-  }, []);
-console.log(store.planets)
+const [climate, setClimate]=useState()
+const [name, setName]=useState()
+const [population, setPopulation]=useState()
+const [diameter, setDiameter]=useState()
+
+useEffect(()=>{
+    fetch(`https://www.swapi.tech/api/planets/${planetid}`)
+    .then((response)=> response.json())
+    .then((data)=> {
+      setClimate(data.result.properties.climate);
+      setName(data.result.properties.name);
+      setPopulation(data.result.properties.population);
+      setDiameter(data.result.properties.diameter);
+
+      console.log(data);
+      })
+
+  
+},[])
+console.log(climate +"clima")
     return(
         <div>
             <div>
+              
             <Details
-            text={store.planets[planetid-1].name}
-                
-            
+            text1={"Name ="}
+            prop1={name}
+            text2={"Population ="}
+            prop2={population}
+            text3={"Climate ="}
+            prop3={climate}
+            text4={"Diameter ="}
+            prop4={diameter}
             img={`https://starwars-visualguide.com/assets/img/planets/${planetid}.jpg`}
             />
             </div>
-        <h1>planet{planetid}</h1>
-        <Link to={-1}><button>fdsa</button></Link>
+        
+      
         </div>
     )
 }
