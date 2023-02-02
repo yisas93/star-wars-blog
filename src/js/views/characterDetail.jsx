@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams,  } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+
 import { Details } from "../component/detail.jsx";
 export const CharacterDetail=()=>{
 const {store,actions}=useContext(Context);
@@ -20,7 +20,7 @@ useEffect(()=>{
       setBirth_year(data.result.properties.birth_year);
       setHeight(data.result.properties.height);
 
-      console.log(data);
+    
       })
 
   

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+
 import { Card } from "../component/card.jsx"
 import { Context } from "../store/appContext.js"
 import { Pagination } from "../component/pagination.jsx"
@@ -34,7 +34,7 @@ useEffect(()=>{
             <div className="container">
                 <div className="row">
                 {store.people.map(people=>
-                <div className="col">
+                <div key={people.uid} className="col">
                     <Card
                         title={people.name}
                         image={`https://starwars-visualguide.com/assets/img/characters/${people.uid}.jpg`}

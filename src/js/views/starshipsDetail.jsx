@@ -20,7 +20,7 @@ useEffect(()=>{
       setModel(data.result.properties.model);
       setManufacturer(data.result.properties.manufacturer);
 
-      console.log(data);
+      
       })
 
   

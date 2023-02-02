@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams,  } from "react-router-dom";
-import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+
+
 import { Details } from "../component/detail.jsx";
 export const PlanetDetail=()=>{
-const {store,actions}=useContext(Context);
+
 const {planetid}=useParams();
 const [climate, setClimate]=useState()
 const [name, setName]=useState()
@@ -20,7 +20,7 @@ useEffect(()=>{
       setPopulation(data.result.properties.population);
       setDiameter(data.result.properties.diameter);
 
-      console.log(data);
+     
       })
 
   

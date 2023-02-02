@@ -27,7 +27,7 @@ return (
         <div className="container over">
             <div className="list-group-horizontal d-flex overflow-scroll "style={{maxHeight: "300px"}}>
                 {store.planets.map(planet=>(
-                <div key={planet.index} className="list-group-item" style={{maxHeight: "100%"}}>
+                <div key={planet.uid} className="list-group-item" style={{maxHeight: "100%"}}>
                     <Card
                         title={planet.name}
                         text={planet.description}
@@ -43,7 +43,7 @@ return (
         <div className="container over">
             <div className="list-group-horizontal d-flex overflow-scroll "style={{maxHeight: "300px"}}>
                 {store.starships.map(starship=>(
-                <div key={starship.index} className="list-group-item" style={{maxHeight: "100%"}}>
+                <div key={starship.uid} className="list-group-item" style={{maxHeight: "100%"}}>
                     <Card
                         title={starship.name}
                         text={starship.description}
@@ -58,7 +58,7 @@ return (
         <div className="container over">
             <div className="list-group-horizontal d-flex overflow-scroll "style={{maxHeight: "300px",}}>
                 {store.people.map(people=>(
-                <div key={people.index} className="list-group-item" style={{maxHeight: "100%"}}>
+                <div key={people.uid} className="list-group-item" style={{maxHeight: "100%"}}>
                     <Card
                         title={people.name}
                         text={people.description}
@@ -73,7 +73,7 @@ return (
         <div className="container over">
             <div className="list-group-horizontal d-flex overflow-scroll "style={{maxHeight: "300px"}}>
                 {store.films.map(film=>(
-                <div key={film.index} className="list-group-item" style={{maxHeight: "100%"}}>
+                <div key={film.uid} className="list-group-item" style={{maxHeight: "100%"}}>
                     <Card
                         title={film.properties.title}
                         image={`https://starwars-visualguide.com/assets/img/films/${film.uid}.jpg`}

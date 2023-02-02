@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+
 import { Card } from "../component/card.jsx"
 import { Context } from "../store/appContext.js"
-import { Pagination } from "../component/pagination.jsx"
-import { useSearchParams } from "react-router-dom"
+
 export const Starships =()=>{
 const {store, actions}=useContext(Context)
 
@@ -18,7 +17,7 @@ useEffect(()=>{
             <div className="container">
                 <div className="row">
             {store.starships.map(starship=>
-                    <div className="col">
+                    <div key={starship.uid} className="col">
                     <Card
                         title={starship.name}
                         image={`https://starwars-visualguide.com/assets/img/starships/${starship.uid}.jpg`}

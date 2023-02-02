@@ -35,7 +35,7 @@ useEffect(()=>{
             <div className="container">
                 <div className="row">
             {store.films.map(film=>
-            <div className="col">
+            <div key={film.uid} className="col">
                     <Card
                         title={film.properties.title}
                         image={`https://starwars-visualguide.com/assets/img/films/${film.uid}.jpg`}
