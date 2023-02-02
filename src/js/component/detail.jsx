@@ -16,12 +16,13 @@ const{actions,store}=useContext(Context)
           onError={imgError}/>
           </div>
           <div className="col-6">
-          <p>
             <h1 style={{color: "green"}}>Characteristics</h1>
-        <text style={{color: "green"}}>{props.text1} {props.prop1}</text><br />
-        <text style={{color: "green"}}>{props.text2} {props.prop2}</text> <br />
-        <text style={{color: "green"}}>{props.text3} {props.prop3}</text><br />
-        <text style={{color: "green"}}> {props.text4} {props.prop4} </text><br />
+          <p>
+            
+        <span style={{color: "green"}}>{props.text1} {props.prop1}</span><br />
+        <span style={{color: "green"}}>{props.text2} {props.prop2}</span> <br />
+        <span style={{color: "green"}}>{props.text3} {props.prop3}</span><br />
+        <span style={{color: "green"}}> {props.text4} {props.prop4} </span><br />
         </p>
         </div>
         </div>
