@@ -1,13 +1,33 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { Card } from "../component/card.jsx"
 import { Context } from "../store/appContext.js"
 import "./viewstyle.css"
 import { Pagination } from "../component/pagination.jsx"
+import { useSearchParams } from "react-router-dom"
 export const Films =()=>{
 const {store, actions}=useContext(Context)
+const [searchParams, setSearchParams]=useSearchParams()
+const[pages, setPages]=useState(0)
+const[records, setRecords]=useState(0)
 useEffect(()=>{
-    actions.getStarwars("films")}, [])
+    actions.getStarwars("films").then((resp)=>{
+        if(resp){
+            setPages(resp.pages)
+            setRecords(resp.records)
+            
+        }
+    })
+ 
+}, [])
+useEffect(()=>{
+    actions.getStarwars("films",{page:searchParams.get("page")}).then((resp)=>{
+        if(resp){
+            setPages(resp.pages);
+            setRecords(resp.records)
+        }
+    })
+}, [searchParams.get("page")])
     return (
         <div className="container">
             <h1 className="title">FILMS</h1>
@@ -29,8 +49,8 @@ useEffect(()=>{
                 <div className="row">
                     <div className="col">
                         <Pagination 
-                        pages={6}
-                        currentPage={1}
+                        pages={pages}
+                        currentPage={searchParams.get("page"||1)}
                         type={"films"}
                         />
                     </div>

@@ -37,7 +37,7 @@ useEffect(()=>{
             <div className="container">
                 <div className="row">
                 {store.planets.map(planet=> (
-                    <div  key={planet.uid} className="col-4">
+                    <div  key={planet.uid} className="col">
                     <Card
                         title={planet.name}
                         image={`https://starwars-visualguide.com/assets/img/planets/${planet.uid }.jpg`}

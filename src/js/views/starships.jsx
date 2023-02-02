@@ -1,12 +1,16 @@
-import React, { useContext, useEffect } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { Card } from "../component/card.jsx"
 import { Context } from "../store/appContext.js"
 import { Pagination } from "../component/pagination.jsx"
+import { useSearchParams } from "react-router-dom"
 export const Starships =()=>{
 const {store, actions}=useContext(Context)
+
 useEffect(()=>{
-    actions.getStarwars("starships")}, [])
+    actions.getStarwars("starships")
+},[])
+
     return (
         <div className="container">
             <h1 className="title">STARSHIPS</h1>
@@ -24,15 +28,7 @@ useEffect(()=>{
                     </div>
                     )}
                 </div>
-                <div className="row">
-                    <div className="col">
-                        <Pagination 
-                        pages={6}
-                        currentPage={1}
-                        type={"starships"}
-                        />
-                    </div>
-                </div>
+  
             </div>
         </div>
     )

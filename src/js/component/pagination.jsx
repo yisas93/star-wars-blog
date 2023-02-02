@@ -14,7 +14,7 @@ export const Pagination=(props)=>{
         <nav>
             <ul className="pagination">
                 <li className={"page-item "+ (props.currentPage==1? " disabled": "")}>
-                    <Link className="page-link" to={props.currentPage ==1?"#":`/${props.type}?page=${parseInt(props.currentPage) -1}`}>Previous</Link>
+                    <Link className="page-link paglink" to={props.currentPage ==1?"#":`/${props.type}?page=${parseInt(props.currentPage) -1}`}>Previous</Link>
                 </li>
                 {Array(props.pages).fill("").map((val,page)=>(
                     

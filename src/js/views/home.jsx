@@ -56,7 +56,7 @@ return (
             </div>
         </div>
         <div className="container over">
-            <div className="list-group-horizontal d-flex overflow-scroll "style={{maxHeight: "300px"}}>
+            <div className="list-group-horizontal d-flex overflow-scroll "style={{maxHeight: "300px",}}>
                 {store.people.map(people=>(
                 <div key={people.index} className="list-group-item" style={{maxHeight: "100%"}}>
                     <Card

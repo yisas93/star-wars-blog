@@ -4,6 +4,7 @@
     border-width: 1px;
     border-color: green;
     height: 100%;
+    max-width: 200px;
 }
 .imagcard{
     height: 9rem;
@@ -59,3 +60,27 @@ ul{
     margin-bottom: 30px;
 }
 
+/*pagination*/
+
+
+.page-link{
+    background-color: #000000;
+    border-color: green;
+    color: green;
+    margin-top: 1rem;
+}
+.page-link:focus{
+    background-color: #ffffff;
+}
+
+
+/*navbar*/
+
+.wholenav{
+   border: 1px solid green; 
+   color: green;
+}
+.buttfav{
+    background: none;
+    color: green;
+}
