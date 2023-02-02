@@ -48,7 +48,7 @@ return (
                         title={starship.name}
                         text={starship.description}
                         image={`https://starwars-visualguide.com/assets/img/starships/${starship.uid}.jpg`}
-                        type="starships"
+                        type="starship"
                         id={starship.uid}
                     />
                 </div>
